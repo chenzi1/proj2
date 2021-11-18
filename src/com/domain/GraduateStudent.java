@@ -4,16 +4,25 @@ public class GraduateStudent extends Student {
 
     GraduateUnit graduateUnit;
 
-    public GraduateStudent(String graduateEnrolmentType, int yearsTaken, char finalGrade) {
-        graduateUnit = new GraduateUnit(graduateEnrolmentType, yearsTaken, finalGrade);
+    public GraduateStudent(String firstName, String lastName, long studentNumber, Date dataOfBirth) {
+        super(firstName, lastName, studentNumber, dataOfBirth);
+        graduateUnit = null;
+    }
+
+    public void setGraduateUnit(GraduateUnit graduateUnit) {
+        this.graduateUnit = graduateUnit;
     }
 
     @Override
     public void reportGrade() {
-        System.out.println(graduateUnit.getEnrolmentType() +
-                "\n" + String.join(" ", super.getFirstName(), super.getLastName()) +
-                "\n" + super.getStudentNumber() +
-                "\n" + graduateUnit.getGraduateEnrolmentType() +
-                "\n" + graduateUnit.getFinalGrade());
+        System.out.println("Enrolment Type: " + graduateUnit.getEnrolmentType() +
+                "\n" + "Name: " + String.join(" ", super.getFirstName(), super.getLastName()) +
+                "\n" + "Student Number: " + super.getStudentNumber() +
+                "\n" + "Graduate Enrolment Type: " + graduateUnit.getGraduateEnrolmentType() +
+                "\n" + "Final Grade: " + graduateUnit.getFinalGrade());
+    }
+
+    public String toString() {
+        return String.join("|", getFirstName(),getLastName(),String.valueOf(getStudentNumber()),getDateOfBirth().toString(), graduateUnit != null? graduateUnit.toString() : null);
     }
 }

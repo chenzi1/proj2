@@ -23,4 +23,8 @@ public class GraduateUnit extends Unit {
     public char getFinalGrade() {
         return finalGrade;
     }
+
+    public String toString() {
+        return String.join("|", graduateEnrolmentType,String.valueOf(yearsTaken),String.valueOf(finalGrade));
+    }
 }

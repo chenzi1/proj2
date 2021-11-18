@@ -38,4 +38,8 @@ public class UndergraduateUnit extends Unit {
     public String getFinalGrade() {
         return finalGrade;
     }
+
+    public String toString() {
+        return String.join("|",unitId,String.valueOf(unitLevel),String.valueOf(assignment1),String.valueOf(assignment2),String.valueOf(practical),String.valueOf(finalExam),String.valueOf(overall),finalGrade);
+    }
 }

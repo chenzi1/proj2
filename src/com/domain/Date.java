@@ -5,6 +5,12 @@ public class Date {
     private int month;
     private int year;
 
+    public Date(int day, int month, int year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    }
+
     public void setDay(int day) {
         this.day = day;
     }
@@ -29,7 +35,7 @@ public class Date {
         return year;
     }
 
-    public String getDate() {
+    public String toString() {
         return String.join("/",String.valueOf(day),String.valueOf(month),String.valueOf(year));
     }
 }
